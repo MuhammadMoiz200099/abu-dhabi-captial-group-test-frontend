@@ -1,1 +1,0 @@
-# abu-dhabi-captial-group-test-frontend

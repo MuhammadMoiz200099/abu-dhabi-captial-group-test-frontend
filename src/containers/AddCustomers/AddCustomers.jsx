@@ -10,12 +10,18 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
+import { useDispatch } from "react-redux";
+import { addCustomer } from "../../redux/slices/customers";
+import { useNavigate } from "react-router-dom";
 
 const AddCustomers = () => {
+  const defaultAvater = "https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png";
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const pageTitle = "Add Customers";
   const pageHeaderConfig = [];
   const [gender, setGender] = useState("");
-  const [picture, setPicture] = useState("");
+  const [picture, setPicture] = useState(defaultAvater);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -30,13 +36,18 @@ const AddCustomers = () => {
       picture,
     };
 
-    console.log(payload);
+    dispatch(
+      addCustomer({
+        data: payload,
+      })
+    );
     fullname.value = "";
     username.value = "";
     email.value = "";
     setGender("");
     address.value = "";
     phone.value = "";
+    setTimeout(() => navigate("/customer?page=0&rowsPerPage=5&search="), 750);
   };
 
   return (
@@ -47,7 +58,7 @@ const AddCustomers = () => {
         variant="div"
         sx={{ width: { sx: "100%", sm: "100%", md: 600 } }}
       >
-        <ImageUpload setPicture={setPicture} />
+        <ImageUpload picture={picture} setPicture={setPicture} />
       </Box>
       <form onSubmit={handleOnSubmit}>
         <Stack

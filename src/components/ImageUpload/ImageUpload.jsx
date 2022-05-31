@@ -1,16 +1,13 @@
 import React, { useRef, useState } from "react";
 import Box from "@mui/material/Box";
-import DefaultImage from "./../../assets/user.png";
 
-const ImageUpload = ({ setPicture }) => {
-  const [image, setImage] = useState(DefaultImage);
+const ImageUpload = ({ picture, setPicture }) => {
   const inputFile = useRef(null);
 
   const handlePictureSelected = (event) => {
     const file = event.target.files[0];
     const image = URL.createObjectURL(file);
     setPicture(image);
-    setImage(image);
   };
 
   return (
@@ -20,7 +17,7 @@ const ImageUpload = ({ setPicture }) => {
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <img
-        src={image}
+        src={picture}
         alt="profile-pic"
         style={{
           width: 200,
@@ -36,6 +33,7 @@ const ImageUpload = ({ setPicture }) => {
         ref={inputFile}
         onChange={handlePictureSelected}
         style={{ display: "none" }}
+        required
       />
     </Box>
   );

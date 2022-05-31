@@ -50,7 +50,7 @@ export const customerSlice = createSlice({
     [getCustomers.fulfilled]: (state, action) => {
       const actionState = action.payload.data;
       state.status = "succeeded";
-      state.config = actionState;
+      state.customers = actionState;
     },
     [getCustomers.rejected]: (state, action) => {
       state.status = "failed";
@@ -59,10 +59,9 @@ export const customerSlice = createSlice({
     [addCustomer.pending]: (state) => {
       state.status = "loading";
     },
-    [addCustomer.fulfilled]: (state, action) => {
-      const actionState = action.payload.data;
+    [addCustomer.fulfilled]: (state) => {
       state.status = "succeeded";
-      state.config = actionState;
+      toast.success("Document Saved Successfully")
     },
     [addCustomer.rejected]: (state, action) => {
       state.status = "failed";

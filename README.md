@@ -2,6 +2,44 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Follow the Instructions to run the project:
+
+
+### First Setup the backend Project:
+
+First clone the backend Repository [abu-dhabi-captial-group-test-backend](https://github.com/MuhammadMoiz200099/abu-dhabi-captial-group-test-backend)
+
+`Once the project is cloned, intall the node_modules using simple command:
+```bash
+npm install
+    OR
+Yarn
+```
+installing node_modules with yarn is more preferable
+
+After the node_models install successfully, Hit the command:
+```bash
+npm run dev
+```
+This will the backend server on port 9000 and connected to cloud mongodb automatically.
+
+
+### Now, Setup the Frontend Project:
+
+Once you are all set with backend repository, Clone the Frontend repository from [abu-dhabi-captial-group-test-frontend](https://github.com/MuhammadMoiz200099/abu-dhabi-captial-group-test-frontend)
+
+When the project is cloned successfully, hit the command:
+```bash
+npm install
+    OR
+Yarn
+
+After the node_models install successfully, Hit the command:
+```bash
+npm start
+```
+This will serve your frontend project.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -10,7 +10,7 @@ const initialState = {
 
 export const getCustomers = createAsyncThunk(
   "customer/getCustomers",
-  ({ data }, thunkAPI) => {
+  (_, thunkAPI) => {
     const response = thunkHandler(
       clients.default.client({
         method: "GET",

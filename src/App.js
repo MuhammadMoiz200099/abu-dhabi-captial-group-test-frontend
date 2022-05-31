@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import Navigation from "./components/Navigation/Navigation";
 import BaseComponent from "./components/BaseComponent/BaseComponent";
-
+import { CustomerContextProvider } from "./contexts/CustomerContext";
 
 function App() {
   return (
-    <BaseComponent>
-      <Navigation />
-    </BaseComponent>
+    <CustomerContextProvider>
+      <BaseComponent>
+        <Navigation />
+      </BaseComponent>
+    </CustomerContextProvider>
   );
 }
 

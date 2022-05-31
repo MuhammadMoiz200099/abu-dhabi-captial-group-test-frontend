@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -18,6 +18,8 @@ import TablePaginationActions from "../TablePaginationActions/TablePaginationAct
 import Loader from "../Loader/Loader";
 import { styleSheet } from "./styles";
 import LightBox from "../LightBox/LightBox";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import { CustomerContext } from "../../contexts/CustomerContext";
 
 const CustomerTable = () => {
   const dispatch = useDispatch();
@@ -34,6 +36,7 @@ const CustomerTable = () => {
   const [openLightBox, setOpenLightBox] = useState(false);
   const [lightBoxImages, setLightBoxImages] = useState(false);
   const [lightBoxImageIndex, setLightBoxImageIndex] = useState(false);
+  const { setCustomerDetails } = useContext(CustomerContext);
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
   useEffect(() => {
@@ -43,9 +46,7 @@ const CustomerTable = () => {
   const routeTo = (id) => navigate(`/view-customer/${id}`);
   const initUIData = () => {
     dispatch(
-      getCustomers({
-        data: {},
-      })
+      getCustomers()
     );
   };
   const initURLSearchParams = () => {
@@ -200,7 +201,10 @@ const CustomerTable = () => {
                       />
                     </TableCell>
                     <TableCell
-                      onClick={() => routeTo(row._id)}
+                      onClick={() => {
+                        setCustomerDetails(row)
+                        routeTo(row._id)
+                      }}
                       sx={{
                         ...styleSheet.rows,
                         cursor: "pointer",
@@ -209,6 +213,7 @@ const CustomerTable = () => {
                       }}
                     >
                       View Details
+                      <TrendingUpIcon />
                     </TableCell>
                   </TableRow>
                 ))}

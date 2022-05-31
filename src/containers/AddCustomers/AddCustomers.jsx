@@ -66,17 +66,19 @@ const AddCustomers = () => {
     setGender("");
     address.value = "";
     phone.value = "";
+    setPicture("");
+    setFile("")
     setIsLoading(false);
     setTimeout(() => navigate("/customer?page=0&rowsPerPage=5&search="), 750);
   };
 
   return (
     <Container maxWidth="xl" sx={{ pb: 8 }}>
-      <PageHeader title={pageTitle} config={pageHeaderConfig} />
+      <PageHeader title={pageTitle} config={pageHeaderConfig} navigate="/customer?page=0&rowsPerPage=5&search=" />
       <Box
         component="div"
         variant="div"
-        sx={{ width: { sx: "100%", sm: "100%", md: 600 } }}
+        sx={{ width: { sx: "100%", sm: "100%", md: 600 }, mt: 2 }}
       >
         <ImageUpload
           picture={picture}

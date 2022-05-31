@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import Box from "@mui/material/Box";
 
-const ImageUpload = ({ picture, setPicture }) => {
+const ImageUpload = ({ picture, setPicture, setFile }) => {
   const inputFile = useRef(null);
 
   const handlePictureSelected = (event) => {
     const file = event.target.files[0];
+    setFile(file)
     const image = URL.createObjectURL(file);
     setPicture(image);
   };

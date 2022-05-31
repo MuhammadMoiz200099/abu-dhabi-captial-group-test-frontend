@@ -45,9 +45,7 @@ const CustomerTable = () => {
   }, []);
   const routeTo = (id) => navigate(`/view-customer/${id}`);
   const initUIData = () => {
-    dispatch(
-      getCustomers()
-    );
+    dispatch(getCustomers());
   };
   const initURLSearchParams = () => {
     if (searchParams.get("page")) {
@@ -73,13 +71,17 @@ const CustomerTable = () => {
     }
   };
   const handleChangePage = (event, newPage) => {
+    setIsLoading(true);
     setPage(newPage);
     setSearchParams({ page: newPage, rowsPerPage });
+    setIsLoading(false);
   };
   const handleChangeRowsPerPage = (event) => {
+    setIsLoading(true);
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
     setSearchParams({ page: 0, rowsPerPage: parseInt(event.target.value, 10) });
+    setIsLoading(false);
   };
   const sortTable = () => {
     let currentSortBy = "username";
@@ -196,14 +198,16 @@ const CustomerTable = () => {
                       <img
                         src={row?.picture}
                         alt="customer-picture"
+                        width={60}
+                        height={60}
                         style={styleSheet.thumbnail_styles}
                         onClick={() => openLightBoxDialog(idx)}
                       />
                     </TableCell>
                     <TableCell
                       onClick={() => {
-                        setCustomerDetails(row)
-                        routeTo(row._id)
+                        setCustomerDetails(row);
+                        routeTo(row._id);
                       }}
                       sx={{
                         ...styleSheet.rows,

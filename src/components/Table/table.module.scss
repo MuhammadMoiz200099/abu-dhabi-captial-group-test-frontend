@@ -1,0 +1,80 @@
+.page {
+  margin-top: 30px;
+  &__table_container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    &__pagination {
+      margin-top: 20px;
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 25px;
+      &__rows {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        select {
+          padding: 2px;
+        }
+      }
+      &__pages {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        &__icon {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__sorted_columns {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    &__more {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 0;
+      margin: 0;
+      thead {
+        position: sticky;
+        top: 0;
+        background: #1a76d2;
+        th {
+          padding: 10px;
+          text-align: center;
+          background: #1a76d2;
+          color: #fff;
+        }
+      }
+      tbody {
+        max-width: 500px;
+        overflow: scroll;
+        tr {
+          text-align: center;
+          &:nth-child(even) {
+            background: #f2f2f2;
+          }
+        }
+      }
+    }
+  }
+}

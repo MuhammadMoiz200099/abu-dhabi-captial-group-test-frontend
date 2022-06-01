@@ -1,21 +1,18 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import classes from "./search.module.scss";
 
 const Search = ({ onInput, search }) => {
   return (
-    <Box sx={{ mb: 1 }}>
-      <TextField
-      sx={{ width: { xs: "100%", sm: "100%", md: 400 }}}
-        id="outlined-basic"
-        label="Search"
+    <div className={classes.page}>
+      <input
+        className={classes.page__input}
+        type="text"
         value={search}
         name="search"
         placeholder="Search"
-        variant="outlined"
         onInput={onInput}
       />
-    </Box>
+    </div>
   );
 };
 

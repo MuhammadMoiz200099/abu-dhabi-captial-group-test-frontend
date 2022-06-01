@@ -1,7 +1,6 @@
 import React from "react";
-import Container from "@mui/material/Container";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import CustomerTable from "../../components/CustomerTable/CustomerTable";
+import Table from "./../../components/Table/Table";
 
 const Customers = () => {
   const pageTitle = "Customers";
@@ -11,12 +10,11 @@ const Customers = () => {
       url: "/add-customer",
     },
   ];
-
   return (
-    <Container maxWidth="xl" sx={{ pb: 8 }}>
+    <div>
       <PageHeader title={pageTitle} config={pageHeaderConfig} />
-      <CustomerTable />
-    </Container>
+      <Table />
+    </div>
   );
 };
 

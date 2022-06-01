@@ -1,0 +1,15 @@
+.image_model {
+  display: flex;
+  justify-content: center;
+
+  &__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__input_file {
+    display: none;
+  }
+}

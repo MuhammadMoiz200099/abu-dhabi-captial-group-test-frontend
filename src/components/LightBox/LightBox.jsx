@@ -2,7 +2,6 @@ import React from "react";
 import Lightbox from "react-image-lightbox";
 
 const LightBox = ({ images, isOpen, setIsOpen, photoIndex, setPhotoIndex }) => {
-
   return (
     <div>
       {isOpen && (

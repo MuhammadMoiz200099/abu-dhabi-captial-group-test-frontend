@@ -1,7 +1,7 @@
-import React from "react";
-import Navigation from "./components/Navigation/Navigation";
-import BaseComponent from "./components/BaseComponent/BaseComponent";
+import "./App.scss";
 import { CustomerContextProvider } from "./contexts/CustomerContext";
+import BaseComponent from "./components/BaseComponent/BaseComponent";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (

@@ -1,0 +1,39 @@
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  &__details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+
+    &__title {
+      color: black !important;
+    }
+    &__into {
+      text-align: justify;
+    }
+    &__my_tech_stacks {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 30px;
+      &__details {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        &__text {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  &__my_pic {
+    display: block;
+  }
+}

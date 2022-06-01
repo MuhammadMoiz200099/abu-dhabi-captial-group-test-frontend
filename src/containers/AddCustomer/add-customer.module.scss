@@ -1,0 +1,55 @@
+.page {
+  padding-bottom: 80px;
+
+  .form_container {
+    margin-top: 20px;
+    width: 600px;
+
+    &__form_fields {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 20px;
+
+      &__form_group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        &__label {
+          font-weight: 600;
+
+          span {
+            color: red;
+          }
+        }
+
+        &__input {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+        }
+        &__select {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+        }
+      }
+    }
+
+    &__form_actions {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .page {
+    .form_container {
+      width: 100%;
+    }
+  }
+}

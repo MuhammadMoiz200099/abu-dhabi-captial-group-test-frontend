@@ -1,51 +1,34 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import IconButton from '@mui/material/IconButton';
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import classes from "./pageheader.module.scss";
+import { BiArrowBack } from "react-icons/bi";
+import Button from "../Button/Button";
 
 const PageHeader = ({ title, config, navigate }) => {
   const router = useNavigate();
   const routeTo = (url) => router(url);
-
   return (
-    <Box
-      component="div"
-      variant="div"
-      sx={{
-        display: "flex",
-        flex: 1,
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Stack spacing={1} direction="row">
+    <div className={classes.page}>
+      <div className={classes.page__title}>
         {navigate && (
-          <IconButton aria-label="keyboard-back" onClick={() => routeTo(navigate)}>
-            <KeyboardBackspaceIcon />
-          </IconButton>
+          <BiArrowBack
+            size={28}
+            className={classes.page__title__back_button}
+            onClick={() => routeTo("/customer?page=0&rowsPerPage=5&search=")}
+          />
         )}
         <h1>{title}</h1>
-      </Stack>
+      </div>
       {config && config.length ? (
-        <Stack spacing={2} direction="row">
+        <div className={classes.page__buttons}>
           {config.map((button, idx) => (
-            <Button
-              key={idx}
-              variant="contained"
-              onClick={() => routeTo(button.url)}
-              sx={{
-                height: 40,
-              }}
-            >
+            <Button type="button" key={idx} onClick={() => routeTo(button.url)}>
               {button.name}
             </Button>
           ))}
-        </Stack>
+        </div>
       ) : null}
-    </Box>
+    </div>
   );
 };
 

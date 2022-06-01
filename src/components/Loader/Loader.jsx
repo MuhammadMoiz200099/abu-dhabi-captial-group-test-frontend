@@ -1,12 +1,8 @@
-import { CircularProgress } from "@mui/material";
 import React from "react";
+import classes from "./loader.module.scss";
 
 const Loader = () => {
-  return (
-    <div style={{ display: 'flex', flex: '1', justifyContent: 'center' }}>
-      <CircularProgress size={100} />
-    </div>
-  );
+  return <div class={classes.loader}></div>;
 };
 
 export default Loader;

@@ -1,46 +1,17 @@
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import React from "react";
-import AlignVerticalBottomIcon from "@mui/icons-material/AlignVerticalBottom";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import PublicIcon from "@mui/icons-material/Public";
-import CodeIcon from "@mui/icons-material/Code";
+import classes from "./home.module.scss";
 import MYPIC from "./../../assets/mypic.jpeg";
+import { FaLinkedin, FaGithub, FaGlobe, FaCode } from "react-icons/fa";
+import { MdAlignVerticalBottom } from "react-icons/md";
 
 const Home = () => {
   return (
-    <Container maxWidth="xl" sx={{ pb: 8 }}>
-    <Box
-      sx={{
-        display: "flex",
-        gap: 10,
-        flexWrap: {
-          xs: "wrap",
-          sm: "wrap",
-          md: "nowrap",
-          lg: "nowrap",
-          xl: "nowrap",
-        },
-        alignItems: "center",
-      }}
-      component="div"
-      variant="div"
-    >
-      <Typography component="div" variant="div">
-        <h1>Hi, I'm Muhammad Moiz Siddique</h1>
-        <Typography
-          sx={{
-            textAlign: "justify",
-          }}
-          component="div"
-          variant="div"
-        >
+    <div className={classes.page}>
+      <div className={classes.page__details}>
+        <h1 className={classes.page__details__title}>
+          Hi, I'm Muhammad Moiz Siddique
+        </h1>
+        <p className={classes.page__details__into}>
           Passion for working on full-stack apps and l am always looking for
           opportunities to grow as an engineer. I have utilised my interpersonal
           skills and detail-oriented nature to continue to improve myself and
@@ -51,91 +22,68 @@ const Home = () => {
           HTML, CSS, Bootstrap, Material and others. My career objective is to
           employ my skills in the software engineering path while continuing to
           soak up as much knowledge and practice as I can to perfect my craft.
-        </Typography>
-        <Typography component="div" variant="div">
-          <List>
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <LinkedInIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <a href="https://www.linkedin.com/in/muhammad-moiz-siddique-74419b166/">
-                  https://www.linkedin.com/in/muhammad-moiz-siddique-74419b166/
-                </a>
-              </ListItemText>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <GitHubIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <a href="https://github.com/MuhammadMoiz200099">
-                  https://github.com/MuhammadMoiz200099
-                </a>
-              </ListItemText>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <PublicIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <a href="https://muhammadmoiz200099.github.io/muhammad_moiz_siddique/">
-                  https://muhammadmoiz200099.github.io/muhammad_moiz_siddique/
-                </a>
-              </ListItemText>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <CodeIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <a href="https://www.hackerrank.com/JerryMMoiz2000">
-                  https://www.hackerrank.com/JerryMMoiz2000
-                </a>
-              </ListItemText>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <AlignVerticalBottomIcon />
-              </ListItemIcon>
-              <ListItemText primary="Expericens: 3 years professional working experices" />
-            </ListItem>
-            <ListItem
-              disablePadding
-              sx={{ display: "flex", alignItems: "flex-start" }}
+        </p>
+        <div className={classes.page__details__my_tech_stacks}>
+          <div className={classes.page__details__my_tech_stacks__details}>
+            <FaLinkedin size={20} />
+            <span
+              className={classes.page__details__my_tech_stacks__details__text}
             >
-              <ListItemIcon>
-                <AlignVerticalBottomIcon />
-              </ListItemIcon>
-              <Typography
-                component="div"
-                variant="div"
-                sx={{ display: "flex", flexDirection: "column" }}
-              >
-                <ListItemText primary="Experties: " />
-                <Typography component="div" variant="div" sx={{ pl: 3 }}>
-                  <ListItemText primary="- Javascript" />
-                  <ListItemText primary="- Typescript" />
-                  <ListItemText primary="- React JS" />
-                  <ListItemText primary="- Angular JS" />
-                  <ListItemText primary="- Node JS" />
-                  <ListItemText primary="- Nest JS" />
-                  <ListItemText primary="- Mongo DB" />
-                  <ListItemText primary="- PostgreSQL" />
-                  <ListItemText primary="- MSSQL" />
-                  <ListItemText primary="- React Native" />
-                  <ListItemText primary="- Python" />
-                </Typography>
-              </Typography>
-            </ListItem>
-          </List>
-        </Typography>
-      </Typography>
-      <Typography component="div" variant="div">
-        <img src={MYPIC} alt="my pic" height={500} width={400} loading="lazy" />
-      </Typography>
-    </Box>
-    </Container>
+              <a href="https://www.linkedin.com/in/muhammad-moiz-siddique-74419b166/">
+                www.linkedin.com/in/muhammad-moiz-siddique-74419b166/
+              </a>
+            </span>
+          </div>
+          <div className={classes.page__details__my_tech_stacks__details}>
+            <FaGithub size={20} />
+            <span
+              className={classes.page__details__my_tech_stacks__details__text}
+            >
+              <a href="https://github.com/MuhammadMoiz200099">
+                github.com/MuhammadMoiz200099
+              </a>
+            </span>
+          </div>
+          <div className={classes.page__details__my_tech_stacks__details}>
+            <FaGlobe size={20} />
+            <span
+              className={classes.page__details__my_tech_stacks__details__text}
+            >
+              <a href="https://muhammadmoiz200099.github.io/muhammad_moiz_siddique/">
+                muhammadmoiz200099.github.io/muhammad_moiz_siddique/
+              </a>
+            </span>
+          </div>
+          <div className={classes.page__details__my_tech_stacks__details}>
+            <FaCode size={20} />
+            <span
+              className={classes.page__details__my_tech_stacks__details__text}
+            >
+              <a href="https://www.hackerrank.com/JerryMMoiz2000">
+                www.hackerrank.com/JerryMMoiz2000
+              </a>
+            </span>
+          </div>
+          <div className={classes.page__details__my_tech_stacks__details}>
+            <MdAlignVerticalBottom size={20} />
+            <span
+              className={classes.page__details__my_tech_stacks__details__text}
+            >
+              Experiences: 3 years professional working experience
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className={classes.page__my_pic}>
+        <img
+          className={classes.page__my_pic__image}
+          src={MYPIC}
+          alt="my_picture"
+          height={500}
+          width={400}
+        />
+      </div>
+    </div>
   );
 };
 
